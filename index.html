@@ -1,0 +1,428 @@
+<html>
+
+<head>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<style>
+
+    @font-face {
+      font-family: mrsEavesRoman;
+      src: url(fonts/mrseavesroman-webfont.ttf);
+    }
+    body{ margin: 0px;
+          background: white;
+
+        }
+    .wrapper { display: grid;
+               grid-template-columns: 1fr 3fr 1fr;
+               height: 100%;
+
+    }
+
+    .timeline { grid-column: 1/2;
+                grid-row: 1/2;
+                display: inline;
+                float: left;
+                margin-left: 0px;
+                margin-top: 20px;
+                z-index:2;
+                transition: 0.25s all;
+
+
+    }
+
+    .timeline div { height: 5px;
+                    width: 20px;
+                    border-bottom: thin solid;
+                    border-color: black;
+                    transition: 0.25s all;
+                    display: grid;
+                    grid-template-columns: 20px 100px;
+                    grid-template-rows: 5px;
+
+    }
+
+    .timeline div:hover { height: 5px;
+                          width: 60px;
+                          border-bottom: thick solid black;
+                          transition: 0.25s all;
+                          grid-template-columns: 60px 200px;
+                          grid-template-rows: 7px;
+
+    }
+
+    .projects { grid-column: 2/3;
+                height: 100vh;
+                overflow:  scroll;
+                grid-row: 1/2;
+
+    }
+
+   .projects::-webkit-scrollbar {
+    visibility: hidden;
+}
+
+
+    .project_item { width: 100%;
+                    height: 100vh;
+                    display: flex;
+                    justify-content: space-around;
+                    margin: 0px;
+    }
+
+    .project_item div { width: 100%;
+    }
+
+    .video_item { display: inline;
+                  float: left;
+                  width: 100%;
+    }
+    .desc {  display: inline;
+             float: left;
+             width: 100%;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             font-family: mrsEavesRoman;
+            font-size: 14pt;
+    }
+
+    .head { width: 100%;
+            height: 50px;
+            display: fixed;
+            grid-row: 1/2;
+            grid-column: 1/4;
+            z-index: 1;
+
+    }
+
+    .name { margin-top: 10px;
+            height:100%;
+            width: 100%;;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+    }
+    .name img { position: flex;;
+    }
+
+    #rotator { width:400px;
+    }
+
+
+    a { font-family: mrsEavesRoman;
+        font-size: 12pt;
+        text-decoration: none;
+        color: black;
+        width: 100%;
+        display: inline;
+        float: left;
+        margin-left: 10px;
+        transition: 0.25s all;
+    }
+    a:hover { font-size: 18pt;
+
+    }
+
+    .top { width: 100%;
+           height: 70vh;
+           position: fixed;
+           top: -71vh;
+           background:beige;
+           border-bottom: thin solid black;
+           transition: 1s all;
+    }
+
+    .bottom { width: 100%;
+             height: 30vh;
+             position: fixed;
+             bottom: -51vh;
+             background:beige;
+             transition: 1s all;
+             border-top: thin solid black;
+
+    }
+
+    .exit { width: 100%;
+            height: 100px;
+            position: relative;
+            cursor: url("assets/open.svg"), auto;
+    }
+
+    iframe {  width: 100%;
+             -ms-zoom: 0.75;
+             -moz-transform: scale(0.75);
+             -o-transform: scale(0.75);
+             -webkit-transform: scale(0.75);
+    }
+
+    #eye {    height: 600px;
+              width: 600px;
+    }
+
+    #unsubscribe {
+                   height : 600px;
+
+    }
+
+    #twelfth { transform: scale(0.75);
+
+            height : 600px;
+
+    }
+
+    #thirteen { transform: scale(0.75);
+
+               height : 600px;
+
+    }
+
+    .collophon  {   width: 100%;
+                    height: 70vh;
+                    display: inline;
+                    z-index: 3;
+                    overflow: scroll;
+                    position: fixed;
+
+
+
+    }
+
+    .collophon p {  text-align: left;
+                    font-family: mrsEavesRoman;
+                    font-size: 12pt;
+                    padding: 100px 150px 0px 150px;
+                    overflow: scroll;
+
+    }
+
+    .bottom p {     text-align: center;
+                    font-family: mrsEavesRoman;
+                    font-size: 12pt;
+                    padding: 0px 150px 0px 150px;
+
+    }
+
+    .year {         text-align: left;
+                    font-family: mrsEavesRoman;
+                    font-size: 12pt;
+                    margin-left: 10px;
+                    margin-bottom: 10px;
+
+    }
+
+
+
+</style>
+</head>
+
+<body>
+  <div class="wrapper">
+
+
+    <div class="head">
+        <div class="name">
+        <img src="assets/logo1.svg" id="rotator">
+      </div> </div>
+
+    <div class="timeline">
+
+        <p class="year"> 2018 </p>
+        <a href="#one"> May 18th </a>
+        <a href="#two"> May 17th </a>
+        <a href="#three"> May 16th </a>
+        <a href="#four"> May 17th </a>
+        <a href="#five"> May 15th  </a>
+        <a href="#six"> May 14th  </a>
+        <a href="#seven"> May 13th  </a>
+        <a href="#eight"> May 12th  </a>
+        <a href="#nine"> May 11th  </a>
+        <a href="#ten"> May 10th </a>
+        <a href="#eleven"> May 9th </a>
+        <a href="#twelfth"> May 8th </a>
+        <a href="#thirteen"> May 7th  </a>
+        <a href="#fourteen"> May 6th </a>
+        <a href="#fifteen"> May 5th </a>
+        <a href="#sixteen"> May 4th  </a>
+        <a > ...</a>
+
+    </div>
+<div class="projects">
+
+  <div class='project_item' id="one">
+    <video width="400" controls autoplay loop> <source src="work/spaced.mp4" type="video/mp4"></video>
+  </div>
+
+  <div class='project_item' id="two">
+    <video width="400" controls autoplay loop > <source src="work/prime.mp4" type="video/mp4"></video>
+  </div>
+
+  <div class='project_item' id="three">
+    <video width="400"  controls autoplay loop> <source src="work/zinnia_1.mp4" type="video/mp4"></video>
+  </div>
+
+  <div class='project_item' id="four">
+    <video width="400" controls autoplay loop> <source src="work/Forsythia_1.mp4" type="video/mp4"></video>
+  </div>
+
+  <div class='project_item' id="five">
+    <video width="400" controls autoplay loop> <source src="work/Monstera_1.mp4" type="video/mp4"></video>
+  </div>
+
+  <div class='project_item' id="six">
+    <video width="400" controls autoplay loop> <source src="work/Dandelion_1.mp4" type="video/mp4"></video>
+  </div>
+
+  <div class='project_item' id="seven">
+    <iframe src="https://stephaniewinarto.github.io/ahouseofdust/"></iframe>
+  </div>
+
+  <div class='project_item' id="eight">
+    <iframe src="https://stephaniewinarto.github.io/pingpong/"></iframe>
+  </div>
+
+  <div class='project_item' id="nine">
+    <iframe id="eye" src="https://stephaniewinarto.github.io/eyeone/"></iframe>
+  </div>
+
+  <div class='project_item' id="ten">
+    <video width="400" controls autoplay loop> <source src="work/generation.mov" type="video/mp4"></video>
+  </div>
+
+  <div class='project_item' id="eleven">
+    <iframe id="subscribe" src="work/unsubscribe/index.html"></iframe>
+  </div>
+
+  <div class='project_item' id="twelfth">
+    <img src="work/iphone.gif">
+  </div>
+
+  <div class='project_item' id="thirteen">
+    <img src="work/search.gif">
+  </div>
+
+  <div class='project_item' id="fourteen">
+    <iframe src="http://affectionate-albattani-9bd0d4.bitballoon.com/index2.html"></iframe>
+  </div>
+
+  <div class='project_item' id="fifteen">
+    <iframe src="http://affectionate-albattani-9bd0d4.bitballoon.com/index3.html"></iframe>
+  </div>
+
+  <div class='project_item' id="sixteen">
+    <iframe src="http://affectionate-albattani-9bd0d4.bitballoon.com/index1.html"></iframe>
+  </div>
+
+
+
+</div>
+  </div>
+
+
+
+  <div class='top'>
+
+    <div class = "collophon">
+            <p>Language is malleable. It can be stretched and pulled in different directions and mean different things. The same word changes with a new sentence and different words mimic each other in old ones. The malleability of language challenges the notion of meaning. Composition of words frames connotation while typographic nuances point to it.
+ <br> <br>
+This brings in the idea of contextualizing and consequently, re-contextualizing. The process of found poetry is deconstructing the space in which language exists and re-contextualizing it in a new environment to mean something different. An open time capsule for poetry borrows, or rather extracts, language from unexpected corners of the digital realm (the web) and refashions it into concrete poetry. It pulls language from the text in search bars, web browsers, software menus, text editors and general digital user interfaces. This extracted language is then typographically and compositionally pulled, prodded and pinched into short poetic experiences.
+  <br> <br>
+These poetic experiences are described as concrete poetry because they refashion informative or ‘dry’ language into a visually communicative and engaging poetic narrative. We were inspired by the works of concrete poets like John Bennett and Emmett Williams. Poets that not only animated meaning with words but animated the words with typography, structure and subject matter.
+ <br> <br>
+With technology, new software and multiple digital distractions, many believe that poetry is increasingly obsolete. The idea of a love letter is condensed to the right emoticon; very personal hand written letters have become quick emails set in 12 pt. Arial Regular, diary entries are Facebook statuses and poetry for many is shackled to old book stores and dusty shelves. This project challenges that notion and boldly states that poetry is ubiquitous. It is in the blinking pop-up ads on every social media platform, “A taste of bright red”,  it is in the text in search bars “Search people and more” commands in a design software, “shapes scale to any size”, blurb under the battery icon “using significant energy”, lost in the MAC back up system, “Enter time machine.” Poetry is now more pervasive and accessible than ever, if only we saw it as such. If only it was found and concreted into what is considered poetry.
+       <br> <br>
+We believe poetry shouldn’t be precious but available and ever-present. By including a timeline and almost the need to have a sketch for each day, we’re forced to create poetry without the pressure or any inhibitions. This idea was inspired by Joseph Brodksy’s speech, an Immodest Proposal which proposes that poetry should be everywhere, bus stops, restrooms, street corners and train stations. It shouldn’t be restricted to a certain demographic or even location. Everyone should write, read and have access to poetry in the way they do any other commodity.
+ <br> <br>
+Therefore, the aim of this capsule is to be a constant reminder of the poetry that surrounds us every day. Language is constant, but it is not immune to evolution. As the world of communication revolutionizes, language and poetic narrative have no choice but to follow, a trajectory we’d like to collect, archive and share.
+ <br> <br>
+</p>
+    </div>
+  </div>
+
+    <div class='bottom'>
+      <div class="exit"> </div>
+      <p> By Stephanie Winarto & Anya Parakh
+      <br><br>
+      Digital Poetics, RISD Spring 2018
+      </p>
+
+
+    </div>
+
+
+
+
+
+  <script>
+
+var rotator = document.getElementById('rotator');
+var num = 0;
+var imageDir = 'assets/';
+var images = [ 'logo1.svg',
+               'logo2.svg',
+               'logo3.svg',
+               'logo4.svg',
+               'logo5.svg',
+               'logo6.svg',
+               'logo7.svg',
+               'logo8.svg',
+               'logo9.svg',
+               'logo10.svg'];
+var delayInSeconds = 5;
+
+$("a").mouseover(
+  function() {
+    rotator.src = imageDir + images[num++];
+    var len = images.length;
+  if (num == len) {
+          num = 0;
+      }
+});
+
+$( ".timeline div" ).mouseover(function() {
+  $(this).children("p").css("display", "inline");
+})
+  .mouseout(function() {
+   $(this).children("p").css("display", "none");
+  })
+;
+
+$( ".name" ).hover(function() {
+  $(".top").css("top", "0px");
+  $(".bottom").css("bottom", "0px");
+  $(".exit").css("top", "-70px");
+  $(".timeline").css("z-index", "0");
+  $(".name").hover(function() {
+
+
+    setInterval(function() {
+      rotator.src = imageDir + images[num++];
+      var len = images.length;
+    if (num == len) {
+            num = 0;
+        }
+  }, delayInSeconds * 200);
+});
+
+});
+
+$( ".exit" ).click(function() {
+  $(".top").css("top", "-71vh");
+  $(".bottom").css("bottom", "-71vh");
+  $(".exit").css("top", "0px");
+
+  $(".timeline").css("z-index", "2");
+
+})
+
+;
+</script>
+
+</body>
+
+
+
+
+
+</html>
